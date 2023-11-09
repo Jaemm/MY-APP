@@ -60,9 +60,11 @@ export const LoginBar = styled.div`
   padding: 6px;
   margin: 10px;
   background-color: white;
+  color: #808080;
 
   &:focus-within {
     box-shadow: 0 0 0 2px #4285f4;
+    color: #808080;
   }
 `;
 
@@ -72,9 +74,12 @@ export const SearchInput = styled.input`
   border-radius: 24px;
   padding: 8px;
   font-size: 14px;
+  background-color: white;
+  color: #808080;
 
   &:focus {
     outline: none;
+    color: #808080;
   }
 `;
 
@@ -86,5 +91,10 @@ export const ButtonWrapper = styled.div`
 
   .button-gap {
     margin-right: 10px;
+  }
+
+  & Button {
+    color: #808080;
+    danger-color: #808080;
   }
 `;

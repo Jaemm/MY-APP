@@ -9,6 +9,7 @@ import { logInAPI } from '../../../components/apis/user/user';
 import { useSetRecoilState } from 'recoil';
 import Swal from 'sweetalert2';
 import { userState } from '../../../recoil/modal/index';
+// import '../styles/variables.less';
 
 const LoginPage = () => {
   const router = useRouter();
@@ -123,7 +124,7 @@ const LoginPage = () => {
             onChange={(e) => setEmail(e.target.value)}
             onKeyUp={emailCheck}
             onKeyPress={handleKeyPress}
-            maxLength={30}
+            // maxLength={30}
             ref={emailRef}
             required
           />
@@ -148,7 +149,9 @@ const LoginPage = () => {
           </Button>
           <span className="button-gap" />
           <a href="/auth/signup">
-            <Button size="large">회원가입</Button>
+            <Button size="large" primary-color>
+              회원가입
+            </Button>
           </a>
         </ButtonWrapper>
       </PageLogin>

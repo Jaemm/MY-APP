@@ -48,18 +48,21 @@ export const PageLogin = styled(Form)`
 `;
 
 export const LoginTitle = styled.div`
-  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  height: 100px; /* 적절한 높이 설정 */
+  color: #808080;
 `;
 
 export const LoginBar = styled.div`
-  margin-top: 0%;
   display: flex;
   align-items: center;
   border: 1px solid #dfe1e5;
   border-radius: 24px;
-  padding: 6px;
+  padding: 0px;
   margin: 10px;
-  background-color: white;
 
   &:focus-within {
     box-shadow: 0 0 0 2px #4285f4;
@@ -72,19 +75,30 @@ export const SearchInput = styled.input`
   border-radius: 24px;
   padding: 8px;
   font-size: 14px;
+  // background-color: white;
+  // color: #808080;
+  // width: 50px;
+  // border: 1px solid #dfe1e5;
+  // margin-bottom: 10px;
 
   &:focus {
     outline: none;
+    color: #808080;
   }
 `;
 
 export const ButtonWrapper = styled.div`
-  padding-left: 40%;
+  //padding-left: 40%;
   display: flex;
   justify-content: flex-end;
-  margin: 0px;
+  //margin: 0px;
 
   .button-gap {
     margin-right: 10px;
+  }
+
+  & Button {
+    color: #808080;
+    //danger-color: #808080;
   }
 `;

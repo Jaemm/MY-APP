@@ -9,6 +9,7 @@ import { logInAPI } from '../../../components/apis/user/user';
 import { useSetRecoilState } from 'recoil';
 import Swal from 'sweetalert2';
 import { userState } from '../../../recoil/modal/index';
+// import '../styles/variables.less';
 
 const LoginPage = () => {
   const router = useRouter();
@@ -113,7 +114,11 @@ const LoginPage = () => {
         <meta name="description" content="login" />
       </Head>
       <PageLogin onFinish={onSubmitForm}>
-        <LoginTitle>로그인</LoginTitle>
+        <LoginTitle>
+          <div>
+            <p>로그인</p>
+          </div>
+        </LoginTitle>
         <LoginBar>
           <SearchInput
             type="email"
@@ -123,12 +128,13 @@ const LoginPage = () => {
             onChange={(e) => setEmail(e.target.value)}
             onKeyUp={emailCheck}
             onKeyPress={handleKeyPress}
-            maxLength={30}
+            // maxLength={30}
             ref={emailRef}
             required
+            autoComplete="off"
           />
         </LoginBar>
-        {emailError && <CheckError>- 이메일 형식이 잘못되었습니다.</CheckError>}
+        {emailError && <CheckError>- 이메일 입력 오류</CheckError>}
         <LoginBar>
           <SearchInput
             type="password"
@@ -140,6 +146,7 @@ const LoginPage = () => {
             maxLength={100}
             ref={passwordRef}
             required
+            autoComplete="off"
           />
         </LoginBar>
         <ButtonWrapper>
@@ -148,7 +155,9 @@ const LoginPage = () => {
           </Button>
           <span className="button-gap" />
           <a href="/auth/signup">
-            <Button size="large">회원가입</Button>
+            <Button size="large" primary-color>
+              회원가입
+            </Button>
           </a>
         </ButtonWrapper>
       </PageLogin>

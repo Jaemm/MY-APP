@@ -5,7 +5,7 @@ export const Layout = styled.div`
   left: 0;
   width: 250px;
   bottom: 0;
-  background: linear-gradient(182.11deg, #d3d3d3 3.56%, white 80.44%);
+  background: linear-gradient(182.11deg, white 2.56%, white 80.44%);
   height: 100vh;
   width: 60px;
   z-index: 3;

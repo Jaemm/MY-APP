@@ -3,7 +3,7 @@ import { Hydrate, QueryClient, QueryClientProvider } from '@tanstack/react-query
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { AppProps } from 'next/app';
 import PageWithLayoutType from '../types/pageWithLayout';
-import { ReactElement } from 'react';
+import { ReactNode } from 'react';
 import { RecoilRoot } from 'recoil';
 
 type AppLayoutProps = AppProps & {
@@ -12,7 +12,8 @@ type AppLayoutProps = AppProps & {
 };
 
 const MyApp = ({ Component, pageProps }: AppLayoutProps) => {
-  const Layout = Component.layout || ((children: ReactElement) => <>{children}</>);
+  const Layout = Component.layout || ((children: ReactNode) => <>{children}</>);
+  // console.log(Component.layout);
 
   const queryClient = new QueryClient();
 

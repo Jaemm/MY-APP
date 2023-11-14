@@ -18,6 +18,8 @@ export const TitleWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 24px;
+  color: #808080;
 `;
 
 export const TextBox = styled.div`
@@ -41,7 +43,7 @@ export const SignUpBar = styled.div`
   align-items: center;
   border: 1px solid #dfe1e5;
   border-radius: 24px;
-  padding: 6px;
+  padding: 0px;
   margin: 10px;
 
   &:focus-within {
@@ -55,6 +57,7 @@ export const SignUpInput = styled.input`
   border-radius: 24px;
   padding: 8px;
   font-size: 14px;
+  // border: 1px solid #dfe1e5;
 
   &:focus {
     outline: none;
@@ -65,4 +68,9 @@ export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   padding-left: 40%;
+
+  & Button {
+    color: #808080;
+    //danger-color: #808080;
+  }
 `;

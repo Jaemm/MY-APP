@@ -159,8 +159,11 @@ const Signup = () => {
       </Head>
       <form>
         <PageSignUp>
-          <div>회원가입</div>
-          <TitleWrapper></TitleWrapper>
+          <TitleWrapper>
+            <div>
+              <p>회원가입</p>
+            </div>
+          </TitleWrapper>
           <SignUpBar>
             <SignUpInput
               type="name"
@@ -175,7 +178,7 @@ const Signup = () => {
               required
             />
           </SignUpBar>
-          {nameError && <CheckError>- 2글자 이상 20글자 미만으로 입력해주세요.</CheckError>}
+          {nameError && <CheckError>- 2글자 이상 20글자 미만으로 입력</CheckError>}
           <SignUpBar>
             <SignUpInput
               type="email"
@@ -203,6 +206,7 @@ const Signup = () => {
               onKeyDown={handleKeyDown}
               ref={passwordRef}
               required
+              autoComplete="off"
             />
           </SignUpBar>
           <SignUpBar>
@@ -216,9 +220,10 @@ const Signup = () => {
               maxLength={100}
               onKeyDown={handleKeyDown}
               required
+              autoComplete="off"
             />
           </SignUpBar>
-          {passwordError && <CheckError>- 비밀번호가 일치하지 않습니다.</CheckError>}
+          {passwordError && <CheckError>- 비밀번호가 일치하지 않습니다</CheckError>}
           <br />
           <ButtonWrapper>
             <Button size="large" onClick={Sign} loading={loading}>

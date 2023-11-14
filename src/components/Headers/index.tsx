@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { LogoWrapper, ButtonWrapper } from './style';
-import { Layout, Button } from 'antd';
+import { Layout } from 'antd';
 import Link from 'next/link';
 import Swal from 'sweetalert2';
-import Weather from '../apis/weather';
+// import Weather from '../apis/weather';
+import LoginButton from '../antd/loginbutton';
 
 const MainLogo = () => {
   const router = useRouter();
@@ -46,27 +47,11 @@ const MainLogo = () => {
             <img src={'/images/FirstLogo.jpeg'} />
           </a>
         </Link>
-        <Weather></Weather>
+        {/* <Weather></Weather> */}
+        <ButtonWrapper>
+          <LoginButton isLoggedIn={isLoggedIn} handleLogout={handleLogout} />
+        </ButtonWrapper>
       </LogoWrapper>
-      <ButtonWrapper>
-        {isLoggedIn ? (
-          <>
-            <Link href="/auth/mypage">
-              <Button>마이페이지</Button>
-            </Link>
-            <Button onClick={handleLogout}>로그아웃</Button>
-          </>
-        ) : (
-          <>
-            <Link href="/auth/login">
-              <Button>로그인</Button>
-            </Link>
-            <Link href="/auth/signup">
-              <Button>회원가입</Button>
-            </Link>
-          </>
-        )}
-      </ButtonWrapper>
     </Layout>
   );
 };
